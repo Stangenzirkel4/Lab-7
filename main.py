@@ -1,6 +1,8 @@
 import random
 import numpy as np
 import time
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import axes3d
 
 # Задание №1
 # Стандартные списки
@@ -23,3 +25,12 @@ all_time2 = time.perf_counter() - t2_start
 print("Время, затраченное на умножение стандартных списков: %s"%(all_time1))
 print("Время, затраченное на умножение массивов NumPy: %s"%(all_time2))
 
+# Задание №3
+
+x = np.linspace(-np.pi*3, np.pi*3, 100)
+y = x * np.cos(x)
+z = np.sin(x)
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(x, y, z, label='parametric curve')
+plt.show()
